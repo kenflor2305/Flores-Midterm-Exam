@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Coca-Cola | Taste the Feeling</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @custom-variant dark (&:where(.dark, .dark *));
+
+    @theme {
+      --color-coke-red: #E41D2D;
+      --color-coke-dark: #202020;
+      --color-coke-cream: #FFF8F0;
+    }
+
+    @layer base {
+      body {
+        @apply bg-coke-cream text-coke-dark transition-colors duration-300 dark:bg-gray-950 dark:text-white;
+      }
+
+      section {
+        scroll-margin-top: 80px;
+      }
+    }
+
+    @layer components {
+      .nav-link {
+        @apply transition-colors duration-300 hover:text-red-600;
+      }
+
+      .primary-btn {
+        @apply inline-block rounded-full bg-red-600 px-7 py-3 font-semibold text-white transition duration-300 hover:bg-red-700 hover:shadow-lg;
+      }
+
+      .section-title {
+        @apply mb-5 text-4xl font-bold md:text-5xl;
+      }
+
+      .product-card {
+        @apply overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-gray-900;
+      }
+
+      .product-image {
+        @apply h-64 w-full object-cover transition duration-500 hover:scale-105;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur dark:border-gray-800 dark:bg-gray-950/95">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+
+      <a href="#home" class="text-2xl font-black italic tracking-tight text-red-600">
+        Coca-Cola
+      </a>
+
+      <div class="hidden items-center gap-7 font-medium md:flex">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#refreshment" class="nav-link">Refreshment</a>
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <button
+        id="darkModeToggle"
+        type="button"
+        aria-label="Toggle dark mode"
+        class="rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold transition hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800"
+      >
+        <span id="themeIcon">Dark Mode</span>
+      </button>
+
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative overflow-hidden bg-red-600 text-white">
+
+      <div class="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2 md:py-24">
+
+        <div id="heroText" class="relative z-10">
+          <p class="mb-4 font-semibold uppercase tracking-[0.3em]">
+            Open Happiness
+          </p>
+
+          <h1 class="mb-6 text-5xl font-black leading-tight md:text-7xl">
+            Taste the Feeling.
+          </h1>
+
+          <p class="mb-8 max-w-lg text-lg leading-8 text-red-50">
+            Refresh your day with the iconic taste of Coca-Cola.
+            Share a cold drink, enjoy the moment, and make memories
+            with the people who matter.
+          </p>
+
+          <a href="#products" class="inline-block rounded-full bg-white px-8 py-3 font-bold text-red-600 transition hover:bg-gray-100">
+            Explore Products
+          </a>
+        </div>
+
+        <div id="heroImage" class="relative">
+          <img
+            src="https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=1200&q=85"
+            alt="Coca-Cola cans and bottles"
+            class="h-[350px] w-full rounded-3xl object-cover shadow-2xl md:h-[480px]"
+            fetchpriority="high"
+          >
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="px-6 py-20">
+
+      <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
+
+        <div class="reveal overflow-hidden rounded-2xl">
+          <img
+            src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=1000&q=85"
+            alt="Cold Coca-Cola drink"
+            class="h-[380px] w-full object-cover"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="reveal">
+          <p class="mb-3 font-semibold uppercase tracking-[0.3em] text-red-600">
+            About Coca-Cola
+          </p>
+
+          <h2 class="section-title">
+            A Classic That Brings People Together
+          </h2>
+
+          <p class="mb-5 leading-8 text-gray-600 dark:text-gray-300">
+            Coca-Cola is one of the world's most recognizable soft drink
+            brands. Its familiar taste and iconic red branding have made
+            it part of celebrations and everyday moments around the world.
+          </p>
+
+          <p class="mb-7 leading-8 text-gray-600 dark:text-gray-300">
+            From sharing a meal to spending time with friends, Coca-Cola
+            celebrates simple moments of connection and enjoyment.
+          </p>
+
+          <a href="#refreshment" class="primary-btn">
+            Discover More
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- REFRESHMENT SECTION -->
+    <section id="refreshment" class="bg-white px-6 py-20 dark:bg-gray-900">
+
+      <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
+
+        <div class="reveal">
+          <p class="mb-3 font-semibold uppercase tracking-[0.3em] text-red-600">
+            Taste the Feeling
+          </p>
+
+          <h2 class="section-title">
+            The Refreshment
+          </h2>
+
+          <p class="mb-6 leading-8 text-gray-600 dark:text-gray-300">
+            Enjoy the refreshing taste of Coca-Cola. Serve it chilled
+            and enjoy the familiar flavor during meals, gatherings,
+            and relaxing moments.
+          </p>
+
+          <a href="#products" class="primary-btn">
+            View Our Products
+          </a>
+        </div>
+
+        <div class="reveal overflow-hidden rounded-2xl">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU6lMRTCq4l7KqzbMlKk3GoxyhacAlGzK_bBLLSkE4IQ&s=10"
+            alt="Coca-Cola red cans and soft drink products"
+            class="h-[420px] w-full object-cover transition duration-500 hover:scale-105"
+            loading="lazy"
+          >
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PRODUCTS SECTION -->
+    <section id="products" class="px-6 py-20">
+
+      <div class="mx-auto max-w-7xl">
+
+        <div class="reveal mb-12 text-center">
+          <p class="mb-3 font-semibold uppercase tracking-[0.3em] text-red-600">
+            Our Collection
+          </p>
+
+          <h2 class="section-title">
+            Coca-Cola Products
+          </h2>
+
+          <p class="mx-auto max-w-2xl leading-7 text-gray-600 dark:text-gray-300">
+            Discover Coca-Cola drinks and packaging, from classic cans
+            to iconic bottles.
+          </p>
+        </div>
+
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+          <!-- PRODUCT 1 -->
+          <article class="product-card reveal">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJi3ggxQThM6NcvGq33qO4jt_Xqjl2S_IrMh0Y_KWYYooCr7P1N3WgzYwH&s=10"
+              alt="Coca-Cola classic drink cans"
+              class="product-image"
+              loading="lazy"
+            >
+
+            <div class="p-6">
+              <h3 class="mb-3 text-xl font-bold">Coca-Cola Spiced</h3>
+              <p class="leading-7 text-gray-600 dark:text-gray-300">
+                The classic Coca-Cola taste in its recognizable red packaging.
+              </p>
+            </div>
+          </article>
+
+          <!-- PRODUCT 2 -->
+          <article class="product-card reveal">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ2nmgg-kRcndv_jeRZ7ScTwG1C-v-qPgWbwd94o8BJA&s=10"
+              alt="Chilled cola drink"
+              class="product-image"
+              loading="lazy"
+            >
+
+            <div class="p-6">
+              <h3 class="mb-3 text-xl font-bold">Coca-Cola Vanilla</h3>
+              <p class="leading-7 text-gray-600 dark:text-gray-300">
+                Enjoy a chilled cola drink with your favorite meals.
+              </p>
+            </div>
+          </article>
+
+          <!-- PRODUCT 3 -->
+          <article class="product-card reveal">
+            <img
+              src="https://www.coca-cola.com/content/dam/onexp/us/en/brands/coca-cola-zero/en_coca-cola_prod_zero%20sugar%20_750x750_v1.jpg"
+              alt="Coca-Cola soft drink packaging"
+              class="product-image"
+              loading="lazy"
+            >
+
+            <div class="p-6">
+              <h3 class="mb-3 text-xl font-bold">Coca-Cola Zero Sugar</h3>
+              <p class="leading-7 text-gray-600 dark:text-gray-300">
+                A familiar soft drink for parties, gatherings, and everyday moments.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PROMOTIONAL BANNER -->
+    <section class="bg-red-600 px-6 py-16 text-center text-white">
+
+      <div class="reveal mx-auto max-w-4xl">
+
+        <h2 class="mb-5 text-4xl font-black md:text-5xl">
+          Share a Coke. Share a Moment.
+        </h2>
+
+        <p class="mx-auto mb-8 max-w-2xl leading-8 text-red-50">
+          Make ordinary moments memorable with friends, family,
+          and the refreshing taste of Coca-Cola.
+        </p>
+
+        <a
+          href="#contact"
+          class="inline-block rounded-full bg-white px-8 py-3 font-bold text-red-600 transition hover:bg-gray-100"
+        >
+          Get in Touch
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="px-6 py-20">
+
+      <div class="mx-auto max-w-3xl">
+
+        <div class="reveal mb-10 text-center">
+          <p class="mb-3 font-semibold uppercase tracking-[0.3em] text-red-600">
+            Contact Us
+          </p>
+
+          <h2 class="section-title">
+            Send Us a Message
+          </h2>
+
+          <p class="text-gray-600 dark:text-gray-300">
+            Have a question or feedback? Fill out the form below.
+          </p>
+        </div>
+
+        <form id="contactForm" class="reveal space-y-5">
+
+          <div>
+            <label for="name" class="mb-2 block font-semibold">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 outline-none transition focus:border-red-600 focus:ring-2 focus:ring-red-200 dark:border-gray-700 dark:bg-gray-900"
+              placeholder="Enter your name"
+            >
+          </div>
+
+          <div>
+            <label for="email" class="mb-2 block font-semibold">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 outline-none transition focus:border-red-600 focus:ring-2 focus:ring-red-200 dark:border-gray-700 dark:bg-gray-900"
+              placeholder="Enter your email"
+            >
+          </div>
+
+          <div>
+            <label for="message" class="mb-2 block font-semibold">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 outline-none transition focus:border-red-600 focus:ring-2 focus:ring-red-200 dark:border-gray-700 dark:bg-gray-900"
+              placeholder="Write your message"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="primary-btn w-full">
+            Send Message
+          </button>
+
+          <p
+            id="formStatus"
+            class="text-center font-medium"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-950 px-6 py-10 text-white">
+
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 text-center md:flex-row md:text-left">
+
+      <div>
+        <a href="#home" class="text-2xl font-black italic text-red-500">
+          Coca-Cola
+        </a>
+
+        <p class="mt-2 text-sm text-gray-400">
+          Taste the Feeling.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-5 text-sm text-gray-300">
+        <a href="#home" class="transition hover:text-red-400">Home</a>
+        <a href="#about" class="transition hover:text-red-400">About</a>
+        <a href="#products" class="transition hover:text-red-400">Products</a>
+        <a href="#contact" class="transition hover:text-red-400">Contact</a>
+      </div>
+
+      <p class="text-sm text-gray-400">
+        © <span id="year"></span> Coca-Cola Website Project
+      </p>
+
+    </div>
+  </footer>
+
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div
+    id="progressBar"
+    class="fixed left-0 top-0 z-[100] h-1 w-0 bg-red-600"
+  ></div>
+
+
+  <!-- REPLAY ANIMATION BUTTON -->
+  <button
+    id="replayBtn"
+    type="button"
+    class="fixed bottom-5 right-5 z-40 rounded-full bg-red-600 px-5 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-red-700"
+  >
+    Replay Animation
+  </button>
+
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
