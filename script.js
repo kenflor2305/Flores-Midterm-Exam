@@ -1,8 +1,4 @@
 
-/* ========================================
-   COCA-COLA WEBSITE JAVASCRIPT
-======================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
   // FOOTER YEAR
   const year = document.getElementById("year");
